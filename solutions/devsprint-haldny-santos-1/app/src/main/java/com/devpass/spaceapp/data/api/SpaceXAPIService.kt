@@ -1,5 +1,6 @@
 package com.devpass.spaceapp.data.api
 
+import com.devpass.spaceapp.data.api.response.LaunchpadDetailResponse
 import com.devpass.spaceapp.data.api.response.LaunchesPageResponse
 import com.devpass.spaceapp.data.api.response.QueryParams
 import com.devpass.spaceapp.data.api.response.RocketDetailResponse
@@ -15,6 +16,9 @@ interface SpaceXAPIService {
 
     @GET("v4/rockets/{id}")
     suspend fun fetchRocketDetails(@Path("id") id: String): RocketDetailResponse
+
+    @GET("v4/launchpads/{id}")
+    suspend fun fetchLaunchpadDetails(@Path("id") id: String): LaunchpadDetailResponse
 
 }
 
